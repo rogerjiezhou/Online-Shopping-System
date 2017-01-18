@@ -26,11 +26,13 @@
 	  </div>
 	</nav>
 	<div id="productList">
-		<table id="productTable"></table>
+		<table id="productTable" class="table table-bordered table-striped">
+			<tr><th>Product</th><th>Price</th><th></th></tr>
 		<jsp:useBean id="obj" class="com.demo.dao.ProductDAO" />
 		<%
-			obj.print();
+			out.print(obj.listProduct());
 		%>
+		</table>
 	</div>
 </body>
 </html>
