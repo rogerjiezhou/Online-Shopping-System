@@ -18,6 +18,7 @@
 		}
 	%>
 	<jsp:include page="header.html" />
+	<div style="padding:20px 50px 20px 50px">
 	<h2>Welcome</h2>
 	<div id="productList">
 		<table id="productTable" class="table table-bordered table-striped">
@@ -27,6 +28,7 @@
 			out.print(obj.listProduct());
 		%>
 		</table>
+	</div>
 	</div>
 </body>
 </html>

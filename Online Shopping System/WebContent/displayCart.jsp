@@ -12,6 +12,7 @@
 </head>
 <body>
 	<jsp:include page="header.html" />
+	<div style="padding:20px 50px 20px 50px">
 	<h3>Your Shopping Cart</h3>
 	<table id="cartTable" class="table table-bordered table-striped">
 			<tr><th>Product</th><th>Price</th><th></th></tr>
@@ -34,5 +35,6 @@
 		
 	<input type="button" class = "btn btn-info" value="Continue Shopping" onclick="location.href='index.jsp'">
 	<input type="button" class = "btn btn-primary" value="Checkout" onclick="location.href='checkout.jsp'">
+	</div>
 </body>
 </html>

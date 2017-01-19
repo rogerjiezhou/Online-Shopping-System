@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>Checkout Page</h3>
-	
-	<%
-		if(session.getAttribute("login") == null || !(Boolean)session.getAttribute("login"))
-			response.sendRedirect("login.jsp");
-	%>
+
 </body>
 </html>

@@ -15,18 +15,23 @@
 	
 	<div class="container">
 
-      <form style="margin:0 auto; width:350px; margin-top:150px">
+      <form name="form" style="margin:0 auto; width:320px; margin-top:130px">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" autofocus>
+        </br>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" >
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+        <h4 style="color:#8c8c8c; text-align:center">--------------- New  Customer ----------------</h4>
+        
+        <button class="btn btn-lg btn-info btn-block" type="submit" onclick="form.action='register.jsp'">Create account</button>
       </form>
 
     </div> <!-- /container -->
