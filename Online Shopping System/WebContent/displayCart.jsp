@@ -31,5 +31,8 @@
 				out.print("<h3>There is no item in your shopping cart...</h3>");
 			}
 		%>
+		
+	<input type="button" class = "btn btn-info" value="Continue Shopping" onclick="location.href='index.jsp'">
+	<input type="button" class = "btn btn-primary" value="Checkout" onclick="location.href='checkout.jsp'">
 </body>
 </html>

@@ -12,6 +12,11 @@
 <title>Online Shopping System</title>
 </head>
 <body>
+	<%
+		if(session.isNew()) {
+			session.setAttribute("login", false);
+		}
+	%>
 	<jsp:include page="header.html" />
 	<h2>Welcome</h2>
 	<div id="productList">
