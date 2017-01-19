@@ -8,17 +8,28 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>Shopping Cart</title>
 </head>
 <body>
+	<jsp:include page="header.html" />
 	<h3>Your Shopping Cart</h3>
 	<table id="cartTable" class="table table-bordered table-striped">
 			<tr><th>Product</th><th>Price</th><th></th></tr>
 			<%
 				ShoppingCartBean myCart = (ShoppingCartBean)session.getAttribute("myCart");
-
-				out.print(myCart.listCartTable());
+				
+				boolean empty = false;
+				
+				if(myCart == null)
+					empty = true;
+				else
+					out.print(myCart.listCartTable());
 			%>
 	</table>
+		<%
+			if(empty){
+				out.print("<h3>There is no item in your shopping cart...</h3>");
+			}
+		%>
 </body>
 </html>

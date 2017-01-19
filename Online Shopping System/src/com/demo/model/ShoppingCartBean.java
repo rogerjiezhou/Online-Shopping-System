@@ -20,8 +20,8 @@ public class ShoppingCartBean implements Serializable{
 		myCart.add(product);
 	}
 	
-	public void removeProduct() {
-		
+	public void removeProduct(int index) {
+		myCart.remove(index);
 	}
 	
 	public String listCartTable() {
@@ -32,7 +32,7 @@ public class ShoppingCartBean implements Serializable{
 			
 			table += "<tr><td>" + myCart.get(i).getProductName() + "</td>" +
 					 "<td>" + myCart.get(i).getProductPrice() + "</td>" +
-					 "<td><a href = \"#\">Remove</td></tr>";			
+					 "<td><a href = \"removeFromCart.jsp?id=" + i + "\">Remove</td></tr>";			
 		}
 			
 		return table;

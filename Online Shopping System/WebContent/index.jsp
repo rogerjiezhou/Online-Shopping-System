@@ -12,19 +12,7 @@
 <title>Online Shopping System</title>
 </head>
 <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Online Shopping System</a>
-	    </div>
-	    <ul class="nav navbar-nav">
-	      <li><a href="#">Home</a></li>
-	      <li><a href="displayCart.jsp">Cart</a></li>
-	      <li><a href="#">Profile</a></li>
-	      <li><a href="#">Orders</a></li>
-	    </ul>
-	  </div>
-	</nav>
+	<jsp:include page="header.html" />
 	<div id="productList">
 		<table id="productTable" class="table table-bordered table-striped">
 			<tr><th>Product</th><th>Price</th><th></th></tr>
