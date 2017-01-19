@@ -13,7 +13,7 @@ public class ShoppingCartBean implements Serializable{
 	}
 	
 	public ArrayList getMyCart() {
-		return myCart;
+		return (ArrayList) myCart.clone();
 	}
 	
 	public void addProduct(ProductBean product) {

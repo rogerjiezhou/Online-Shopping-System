@@ -34,11 +34,15 @@ public class ProductDAO {
 				table += "<tr>" +
 					"<td class=\"name\">" + rs.getString(2) + "</td>" +
 					"<td class=\"pwd\">" + rs.getString(3) + "</td>" +
-					"<td>" +
-						"<a href=\"addToCart.jsp?productID=" + rs.getInt(1)  
-								+ "&productName=" + rs.getString(2)
-								+ "&productPrice="+ rs.getDouble(3)+ "\">"
-								+ "Add to Shopping Cart</a>" +
+					"<td style=\"text-align:center\">" +			
+						"<input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'addToCart.jsp?productID=" + rs.getInt(1)  
+						+ "&productName=" + rs.getString(2)
+						+ "&productPrice="+ rs.getDouble(3)+ "\'\" value=\"Add to Wish List\">" +
+					"</td>" +
+					"<td style=\"text-align:center\">" +			
+						"<input type=\"button\" class = \"btn btn-primary\" onclick=\"location.href=\'addToCart.jsp?productID=" + rs.getInt(1)  
+						+ "&productName=" + rs.getString(2)
+						+ "&productPrice="+ rs.getDouble(3)+ "\'\" value=\"Add to Cart\">" +
 					"</td>" +
 				"</tr>";
 			}

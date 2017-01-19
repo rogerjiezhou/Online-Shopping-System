@@ -13,9 +13,10 @@
 </head>
 <body>
 	<jsp:include page="header.html" />
+	<h2>Welcome</h2>
 	<div id="productList">
 		<table id="productTable" class="table table-bordered table-striped">
-			<tr><th>Product</th><th>Price</th><th></th></tr>
+			<tr><th>Product</th><th>Price</th><th style="width:15%"></th><th style="width:15%"></th></tr>
 		<jsp:useBean id="obj" class="com.demo.dao.ProductDAO" />
 		<%
 			out.print(obj.listProduct());

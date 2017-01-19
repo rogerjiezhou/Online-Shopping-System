@@ -20,7 +20,7 @@
 				
 				boolean empty = false;
 				
-				if(myCart == null)
+				if(myCart == null || myCart.getMyCart().size() == 0)
 					empty = true;
 				else
 					out.print(myCart.listCartTable());

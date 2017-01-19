@@ -7,6 +7,7 @@ public class ProductBean implements Serializable{
 	private int productID;
 	private String productName;
 	private double productPrice;
+	private int orderQuantity;
 	
 	public int getProductID() {
 		return productID;
@@ -25,6 +26,12 @@ public class ProductBean implements Serializable{
 	}
 	public void setProductPrice(double productPrice) {
 		this.productPrice = productPrice;
+	}
+	public int getOrderQuantity() {
+		return orderQuantity;
+	}
+	public void setOrderQuantity(int orderQuantity) {
+		this.orderQuantity = orderQuantity;
 	}
 	
 	
