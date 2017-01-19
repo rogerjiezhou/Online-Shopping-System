@@ -35,7 +35,10 @@ public class ProductDAO {
 					"<td class=\"name\">" + rs.getString(2) + "</td>" +
 					"<td class=\"pwd\">" + rs.getString(3) + "</td>" +
 					"<td>" +
-						"<a href=\"delete.jsp?id=" + rs.getString(1) + "\" >Add to Shopping Cart</a>" +
+						"<a href=\"addToCart.jsp?productID=" + rs.getInt(1)  
+								+ "&productName=" + rs.getString(2)
+								+ "&productPrice="+ rs.getDouble(3)+ "\">"
+								+ "Add to Shopping Cart</a>" +
 					"</td>" +
 				"</tr>";
 			}
