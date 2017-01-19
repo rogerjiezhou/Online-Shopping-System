@@ -19,7 +19,7 @@
 	    </div>
 	    <ul class="nav navbar-nav">
 	      <li><a href="#">Home</a></li>
-	      <li><a href="#">Cart</a></li>
+	      <li><a href="displayCart.jsp">Cart</a></li>
 	      <li><a href="#">Profile</a></li>
 	      <li><a href="#">Orders</a></li>
 	    </ul>
