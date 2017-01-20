@@ -24,6 +24,7 @@
 				String email = "";
 				if(session.getAttribute("email") != null){			
 					email = (String)session.getAttribute("email");
+					myList.setEmail(email);
 					myList.setList(wishListDAO.getWishList(email));
 					System.out.println("Loading in index");
 				}

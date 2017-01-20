@@ -57,4 +57,34 @@ public class WishListDAO {
 		return al;
 	}
 	
+	public void insertWishList(ProductBean product, String email) {
+		
+		String customerEmail = email;
+		int productID = product.getProductID();
+		String productName = product.getProductName();
+		double productPrice = product.getProductPrice();
+		
+		int x = 0;
+			
+		try {
+			
+			PreparedStatement ps = con.prepareStatement("insert into wishlist values(?, ?, ?, ?)");
+			
+			ps.setString(1, customerEmail);
+			ps.setInt(2, productID);
+			ps.setString(3, productName);
+			ps.setDouble(4, productPrice);
+			
+			x = ps.executeUpdate();
+			
+			System.out.println("insert wishlist" + x);
+
+			ps.close();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 }

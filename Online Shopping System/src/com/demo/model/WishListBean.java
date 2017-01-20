@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class WishListBean implements Serializable{
 	
 	private ArrayList<ProductBean> myList;
-//	private String username;
+	private String email;
 
 	public WishListBean() {
 		this.myList = new ArrayList<ProductBean>();
@@ -16,14 +16,20 @@ public class WishListBean implements Serializable{
 		return (ArrayList) myList.clone();
 	}
 	
-	public void addProduct(ProductBean product, String username) {
+	public void addProduct(ProductBean product) {
 		myList.add(product);
+		System.out.println("add " + myList);
 	}
 	
-	public void removeProduct(int index, String username) {
+	public void removeProduct(int index) {
 		myList.remove(index);
+		System.out.println(myList);
 	}
 	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String wishListTable() {
 		
 		String table ="";
@@ -41,8 +47,7 @@ public class WishListBean implements Serializable{
 	public void setList(ArrayList al) {
 		
 		this.myList = (ArrayList)al.clone();
-		System.out.println(myList);
-		System.out.println("Bean " + myList.size());;
+
 	}
 	
 	public String listTable() {
