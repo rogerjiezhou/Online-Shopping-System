@@ -25,8 +25,9 @@
 		
 	%>
 	<jsp:include page="header.jsp" />
-	<div style="padding:20px 50px 20px 50px">
-	<h2>Welcome <%= username %></h2>
+	<div style="padding:0px 50px 20px 50px">
+	<h3>Shopping Deck</h3>
+	</br>
 	<div id="productList">
 		<table id="productTable" class="table table-bordered table-striped">
 			<tr><th>Product</th><th>Price</th><th style="width:15%"></th><th style="width:15%"></th></tr>

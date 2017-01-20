@@ -15,8 +15,8 @@
 
 	<div class="container">
 
-      <form style="margin:0 auto; width:320px; margin-top:130px" action="checkRegisterValid.jsp" method="post">
-        <h2 class="form-signin-heading">Register new account</h2>
+      <form style="margin:0 auto; width:320px; margin-top:105px" action="checkRegisterValid.jsp" method="post">
+        <h2 class="form-signin-heading">Register new account</h2></br>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
         </br>

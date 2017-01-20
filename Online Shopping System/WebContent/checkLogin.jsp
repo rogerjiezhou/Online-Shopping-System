@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Register</title>
+<title>Login</title>
 </head>
 <body>
 
@@ -15,17 +15,16 @@
 
 <jsp:useBean id="obj" class="com.demo.dao.CustomerDAO" />
 
-<jsp:include page="register.jsp"></jsp:include>
+<jsp:include page="login.jsp"></jsp:include>
 <%
-	int validation = obj.regValidate(customer);
-	if(validation == 1){
-		out.println("<h4 style=\"color:red;text-align:center\">This email is already registered</h4>");
-		
+	String username = obj.loginValidate(customer);
+	
+	if(username.equals("")){
+		out.println("<h4 style=\"color:red;text-align:center\">Wrong email or password");		
 	}else{
-		session.setAttribute("username", customer.getUsername());
+		session.setAttribute("username", username);
 		session.setAttribute("login",true);
-		int x = obj.insertCustomer(customer);
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("index.jsp");	
 	}
 		
 %>

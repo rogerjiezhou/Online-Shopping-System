@@ -27,6 +27,33 @@ public class CustomerDAO {
 		
 	}
 	
+	public String loginValidate(CustomerBean customer){
+		int x = 0;
+		String username = "";
+		
+		String loginEmail = customer.getEmail();
+		String loginPwd = customer.getPwd();
+		
+		try {
+			PreparedStatement ps = con.prepareStatement("select * from customer" +
+					" where customerEmail=\"" + loginEmail +
+					"\" and customerPwd=\"" + loginPwd + "\"");
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next())
+				username = rs.getString(2);
+			
+			rs.close();
+			ps.close();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+			
+		return username;
+	}
+	
 	public int regValidate(CustomerBean customer){
 		int x = 0;
 		
@@ -36,7 +63,7 @@ public class CustomerDAO {
 		try {
 			PreparedStatement ps = con.prepareStatement("select * from customer" +
 					" where customerEmail=\"" + regEmail +
-					"\" and customerPwd=\"" + regPwd +"\"");
+					"\"");
 			
 			ResultSet rs = ps.executeQuery();
 			
@@ -44,7 +71,9 @@ public class CustomerDAO {
 				x  = 1;
 			else
 				x = -1;
-			System.out.println(x);
+
+			rs.close();
+			ps.close();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -53,4 +82,29 @@ public class CustomerDAO {
 		return x;
 	}
 	
+	
+	public int insertCustomer(CustomerBean customer){
+		int x = 0;
+		
+		String regEmail = customer.getEmail();
+		String regUsername = customer.getUsername();
+		String regPwd = customer.getPwd();
+		
+		try {
+			PreparedStatement ps = con.prepareStatement("insert into customer values(?, ?, ?)");
+			
+			ps.setString(1, regEmail);
+			ps.setString(2, regUsername);
+			ps.setString(3, regPwd);
+			
+			x = ps.executeUpdate();
+			
+			ps.close();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+			
+		return x;
+	}
 }
