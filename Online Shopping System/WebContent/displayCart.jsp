@@ -16,7 +16,7 @@
 	<h3>Your Shopping Cart</h3>
 	</br>
 	<table id="cartTable" class="table table-bordered table-striped">
-			<tr><th>Product</th><th>Price</th><th></th></tr>
+			<tr><th>Product</th><th>Price</th><th>Quantity</th><th style="width:25%"></th><th style="width:20%"></th></tr>
 			<%
 				ShoppingCartBean myCart = (ShoppingCartBean)session.getAttribute("myCart");
 				
@@ -35,7 +35,12 @@
 		%>
 		
 	<input type="button" class = "btn btn-info" value="Continue Shopping" onclick="location.href='index.jsp'">
-	<input type="button" class = "btn btn-primary" value="Checkout" onclick="location.href='checkout.jsp'">
+		<%
+			if(!empty){
+				out.print("<input type=\"button\" class = \"btn btn-primary\" value=\"Checkout\" onclick=\"location.href='checkout.jsp\'\">");
+			}
+		%>
+	
 	</div>
 </body>
 </html>

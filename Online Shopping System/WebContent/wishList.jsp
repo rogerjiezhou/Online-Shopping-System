@@ -21,23 +21,23 @@
 	<h3>Your Wish List</h3>
 	</br>
 	<table id="cartTable" class="table table-bordered table-striped">
-			<tr><th>Product</th><th>Price</th><th></th></tr>
+			<tr><th>Product</th><th>Price</th><th style="width:20%"></th><th style="width:25%"></th></tr>
 	<jsp:useBean id="myList" scope="session" class="com.demo.model.WishListBean"></jsp:useBean>
 	<jsp:useBean id="wishListDAO" class="com.demo.dao.WishListDAO"></jsp:useBean>
 			<%
 			
 				out.println(myList.listTable());
+				if(myList.getMyList().size() == 0){
+					out.print("<h3>There is no item in your wish list...</h3>");
+				}
 			
 			%>
 	</table>
-		<%
-			//if(empty){
-			//	out.print("<h3>There is no item in your wish list...</h3>");
-			//}
-		%>
+		
 		
 	<input type="button" class = "btn btn-info" value="Continue Shopping" onclick="location.href='index.jsp'">
 	<input type="button" class = "btn btn-primary" value="Checkout" onclick="location.href='checkout.jsp'">
+	
 	</div>
 </body>
 </html>
