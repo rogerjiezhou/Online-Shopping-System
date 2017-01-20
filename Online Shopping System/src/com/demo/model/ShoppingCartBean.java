@@ -17,7 +17,12 @@ public class ShoppingCartBean implements Serializable{
 	}
 	
 	public void addProduct(ProductBean product) {
-		myCart.add(product);
+		int index = contains(product);
+		if(index != -1){
+			product.setOrderQuantity(product.getOrderQuantity() + 1);
+			myCart.set(index, product);
+		}else
+			myCart.add(product);
 	}
 	
 	public void removeProduct(int index) {
@@ -38,7 +43,22 @@ public class ShoppingCartBean implements Serializable{
 					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-danger\" onclick=\"location.href=\'removeFromCart.jsp?id=" + i + "\'\"" +
 					 " value=\"Remove from Cart\"></tr>";
 		}
-			
+		
 		return table;
+	}
+	
+	public int contains(ProductBean product) {
+		
+		int index = -1;
+		
+		for(int i = 0; i < myCart.size(); i++) {
+			if(myCart.get(i).equals(product)) {
+				index = i;
+				System.out.println("find duplicate cart");
+				break;
+			}
+		}
+		
+		return index;
 	}
 }

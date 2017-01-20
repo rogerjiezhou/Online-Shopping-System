@@ -9,7 +9,9 @@ public class ProductBean implements Serializable{
 	private double productPrice;
 	private int orderQuantity;
 	
-	public ProductBean(){}
+	public ProductBean(){
+		this.orderQuantity = 1;
+	}
 	
 	public ProductBean(int productID, String productName, double productPrice, int orderQuantity) {
 		super();

@@ -52,16 +52,16 @@ public class WishListBean implements Serializable{
 	
 	public boolean contains(ProductBean product) {
 		
-		boolean exist = false;
+		boolean contains = false;
 		
 		for(ProductBean temp: myList) {
 			if(temp.equals(product)) {
-				exist = true;
-				System.out.println("find duplicate");
+				contains = true;
+				System.out.println("find duplicate list");
 				break;
 			}
 		}
 		
-		return exist;
+		return contains;
 	}
 }

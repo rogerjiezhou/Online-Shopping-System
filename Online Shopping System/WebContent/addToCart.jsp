@@ -25,7 +25,7 @@
 			myCart = new ShoppingCartBean();
 			session.setAttribute("myCart", myCart);
 		}
-			
+		
 		myCart.addProduct(product);
 		
 		response.sendRedirect("index.jsp");
