@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="com.demo.model.ShoppingCartBean" %>
+<%@ page import="com.demo.model.WishListBean" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,30 +8,32 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Shopping Cart</title>
+<title>Wish List</title>
 </head>
 <body>
+
+	<%
+		if(!(Boolean)session.getAttribute("login"))
+			response.sendRedirect("login.jsp");
+	%>
 	<jsp:include page="header.jsp" />
 	<div style="padding:0px 50px 20px 50px">
-	<h3>Your Shopping Cart</h3>
+	<h3>Your Wish List</h3>
 	</br>
 	<table id="cartTable" class="table table-bordered table-striped">
 			<tr><th>Product</th><th>Price</th><th></th></tr>
+	<jsp:useBean id="myList" scope="session" class="com.demo.model.WishListBean"></jsp:useBean>
+	<jsp:useBean id="wishListDAO" class="com.demo.dao.WishListDAO"></jsp:useBean>
 			<%
-				ShoppingCartBean myCart = (ShoppingCartBean)session.getAttribute("myCart");
-				
-				boolean empty = false;
-				
-				if(myCart == null || myCart.getMyCart().size() == 0)
-					empty = true;
-				else
-					out.print(myCart.listCartTable());
+			
+				out.println(myList.listTable());
+			
 			%>
 	</table>
 		<%
-			if(empty){
-				out.print("<h3>There is no item in your shopping cart...</h3>");
-			}
+			//if(empty){
+			//	out.print("<h3>There is no item in your wish list...</h3>");
+			//}
 		%>
 		
 	<input type="button" class = "btn btn-info" value="Continue Shopping" onclick="location.href='index.jsp'">

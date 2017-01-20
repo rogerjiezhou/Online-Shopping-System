@@ -12,12 +12,22 @@
 <title>Online Shopping System</title>
 </head>
 <body>
+	<jsp:useBean id="myList" scope="session" class="com.demo.model.WishListBean"></jsp:useBean>
+	<jsp:useBean id="wishListDAO" class="com.demo.dao.WishListDAO"></jsp:useBean>
 	<%
 		String username = "";
 		
 		if(session.isNew()) {
 			session.setAttribute("login", false);
 		}else{
+			if((Boolean)session.getAttribute("login")){
+				String email = "";
+				if(session.getAttribute("email") != null){			
+					email = (String)session.getAttribute("email");
+					myList.setList(wishListDAO.getWishList(email));
+					System.out.println("Loading in index");
+				}
+			}
 			if(session.getAttribute("username") != null)
 				username = (String)session.getAttribute("username");
 		}

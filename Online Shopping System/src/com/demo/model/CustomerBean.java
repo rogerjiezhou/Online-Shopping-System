@@ -1,6 +1,8 @@
 package com.demo.model;
 
-public class CustomerBean {
+import java.io.Serializable;
+
+public class CustomerBean implements Serializable{
 	
 	private String email;
 	private String username;

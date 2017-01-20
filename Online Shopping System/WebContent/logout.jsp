@@ -10,6 +10,7 @@
 <%
 	session.setAttribute("login", false);
 	session.setAttribute("username", null);
+	session.setAttribute("email", null);
 	response.sendRedirect("index.jsp");
 %>
 

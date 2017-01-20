@@ -23,6 +23,7 @@
 		out.println("<h4 style=\"color:red;text-align:center\">Wrong email or password");		
 	}else{
 		session.setAttribute("username", username);
+		session.setAttribute("email", customer.getEmail());
 		session.setAttribute("login",true);
 		response.sendRedirect("index.jsp");	
 	}

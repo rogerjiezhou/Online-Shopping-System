@@ -35,7 +35,7 @@ public class ProductDAO {
 					"<td class=\"name\">" + rs.getString(2) + "</td>" +
 					"<td class=\"pwd\">" + rs.getString(3) + "</td>" +
 					"<td style=\"text-align:center\">" +			
-						"<input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'addToCart.jsp?productID=" + rs.getInt(1)  
+						"<input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'addToList.jsp?productID=" + rs.getInt(1)  
 						+ "&productName=" + rs.getString(2)
 						+ "&productPrice="+ rs.getDouble(3)+ "\'\" value=\"Add to Wish List\">" +
 					"</td>" +

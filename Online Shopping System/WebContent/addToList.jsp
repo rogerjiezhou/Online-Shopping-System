@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="com.demo.model.ShoppingCartBean" %>
+<%@ page import="com.demo.model.WishListBean" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,16 +19,11 @@
 	<jsp:setProperty name="product" property="*" />
 	
 	<%
-		ShoppingCartBean myCart = (ShoppingCartBean)session.getAttribute("myCart");
-		
-		if(myCart == null) {
-			myCart = new ShoppingCartBean();
-			session.setAttribute("myCart", myCart);
+		if((Boolean)session.getAttribute("login")){		
+			response.sendRedirect("index.jsp");
+		}else{
+			response.sendRedirect("login.jsp");
 		}
-			
-		myCart.addProduct(product);
-		
-		response.sendRedirect("index.jsp");
 	%>
 
 

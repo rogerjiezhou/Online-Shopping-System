@@ -23,6 +23,7 @@
 		
 	}else{
 		session.setAttribute("username", customer.getUsername());
+		session.setAttribute("email", customer.getEmail());
 		session.setAttribute("login",true);
 		int x = obj.insertCustomer(customer);
 		response.sendRedirect("index.jsp");
