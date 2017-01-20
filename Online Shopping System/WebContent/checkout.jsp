@@ -12,6 +12,8 @@
 	<%
 		if(session.getAttribute("login") == null || !(Boolean)session.getAttribute("login"))
 			response.sendRedirect("login.jsp");
+		else
+			response.sendRedirect("index.jsp");
 	%>
 </body>
 </html>

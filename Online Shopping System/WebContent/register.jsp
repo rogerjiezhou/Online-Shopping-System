@@ -15,16 +15,16 @@
 
 	<div class="container">
 
-      <form style="margin:0 auto; width:320px; margin-top:130px" action="checkRegisterValid.jsp">
+      <form style="margin:0 auto; width:320px; margin-top:130px" action="checkRegisterValid.jsp" method="post">
         <h2 class="form-signin-heading">Register new account</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
         </br>
         <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="User name" required>
+        <input type="text" name="username" class="form-control" placeholder="User name" required>
         </br>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="pwd" class="form-control" placeholder="Password" required>
 		</br>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Create your account</button>
 

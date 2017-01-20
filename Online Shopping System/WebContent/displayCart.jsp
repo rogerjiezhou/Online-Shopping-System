@@ -11,7 +11,7 @@
 <title>Shopping Cart</title>
 </head>
 <body>
-	<jsp:include page="header.html" />
+	<jsp:include page="header.jsp" />
 	<div style="padding:20px 50px 20px 50px">
 	<h3>Your Shopping Cart</h3>
 	<table id="cartTable" class="table table-bordered table-striped">

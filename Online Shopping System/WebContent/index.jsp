@@ -13,13 +13,20 @@
 </head>
 <body>
 	<%
+		String username = "";
+		
 		if(session.isNew()) {
 			session.setAttribute("login", false);
+		}else{
+			if(session.getAttribute("username") != null)
+				username = (String)session.getAttribute("username");
 		}
+		
+		
 	%>
-	<jsp:include page="header.html" />
+	<jsp:include page="header.jsp" />
 	<div style="padding:20px 50px 20px 50px">
-	<h2>Welcome</h2>
+	<h2>Welcome <%= username %></h2>
 	<div id="productList">
 		<table id="productTable" class="table table-bordered table-striped">
 			<tr><th>Product</th><th>Price</th><th style="width:15%"></th><th style="width:15%"></th></tr>
