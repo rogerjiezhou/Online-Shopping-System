@@ -18,11 +18,13 @@
 	<jsp:setProperty name="product" property="*" />
 	
 	<jsp:useBean id="wishListDAO" class="com.demo.dao.WishListDAO"></jsp:useBean>
+	<jsp:useBean id="myList" scope="session" class="com.demo.model.WishListBean"></jsp:useBean>
 
-	
 	<%
 		if((Boolean)session.getAttribute("login")){	
-			wishListDAO.insertWishList(product, (String)session.getAttribute("email"));
+			if(!myList.exist(product)){
+				wishListDAO.insertWishList(product, (String)session.getAttribute("email"));				
+			}
 			response.sendRedirect("index.jsp");
 		}else{
 			response.sendRedirect("login.jsp");

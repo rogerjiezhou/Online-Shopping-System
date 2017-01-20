@@ -38,10 +38,27 @@ public class WishListBean implements Serializable{
 			
 			table += "<tr><td>" + myList.get(i).getProductName() + "</td>" +
 					 "<td>" + myList.get(i).getProductPrice() + "</td>" +
-					 "<td><a href = \"removeFromList.jsp?productID=" + myList.get(i).getProductID() +
-					 "&index=" + i + "\">Remove from list</td></tr>";			
+					 "<td style=\"text-align:center\">" +			
+					 "<input type=\"button\" class = \"btn btn-danger\" onclick=\"location.href=\'removeFromList.jsp?productID=" + myList.get(i).getProductID() +  
+					 "&index=" + i + "\'\" value=\"Remove from Wish List\">" +
+					 "</td></tr>";
 		}
 			
 		return table;
+	}
+	
+	public boolean exist(ProductBean product) {
+		
+		boolean exist = false;
+		
+		for(ProductBean temp: myList) {
+			if(temp.equals(product)) {
+				exist = true;
+				System.out.println("find duplicate");
+				break;
+			}
+		}
+		
+		return exist;
 	}
 }

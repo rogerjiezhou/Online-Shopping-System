@@ -43,6 +43,28 @@ public class ProductBean implements Serializable{
 	public void setOrderQuantity(int orderQuantity) {
 		this.orderQuantity = orderQuantity;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + productID;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ProductBean other = (ProductBean) obj;
+		if (this.getProductID() == other.getProductID())
+			return true;
+		return false;
+	}
 	
 	
 }
