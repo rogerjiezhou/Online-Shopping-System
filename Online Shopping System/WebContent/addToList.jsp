@@ -17,7 +17,6 @@
 	<jsp:useBean id="product" class="com.demo.model.ProductBean" />	
 	<jsp:setProperty name="product" property="*" />
 	
-	<jsp:useBean id="myList" scope="session" class="com.demo.model.WishListBean"></jsp:useBean>
 	<jsp:useBean id="wishListDAO" class="com.demo.dao.WishListDAO"></jsp:useBean>
 
 	

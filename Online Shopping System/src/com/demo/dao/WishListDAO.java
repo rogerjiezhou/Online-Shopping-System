@@ -87,4 +87,26 @@ public class WishListDAO {
 		
 	}
 	
+	public void removeWishList(int productID, String email) {
+		
+		int x = 0;
+			
+		try {
+			
+			PreparedStatement ps = con.prepareStatement("delete from wishlist "+
+														"where customerEmail=\"" + email + "\"" +
+														"and productID=\"" + productID + "\"");
+			
+			
+			x = ps.executeUpdate();
+			
+			System.out.println("remove wishlist" + x);
+
+			ps.close();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
