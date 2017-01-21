@@ -7,15 +7,21 @@ import java.util.Iterator;
 public class ShoppingCartBean implements Serializable{
 	
 	private ArrayList<ProductBean> myCart;
+	private int totalQuantity;
 
 	public ShoppingCartBean() {
 		this.myCart = new ArrayList<ProductBean>();
+		this.totalQuantity = 0;
 	}
 	
 	public ArrayList getMyCart() {
 		return (ArrayList) myCart.clone();
 	}
 	
+	public int getTotalQuantity() {
+		return totalQuantity;
+	}
+
 	public void addProduct(ProductBean product) {
 		int index = contains(product);
 		if(index != -1){
@@ -23,10 +29,19 @@ public class ShoppingCartBean implements Serializable{
 			myCart.set(index, product);
 		}else
 			myCart.add(product);
+		updateQuantity();
 	}
 	
+	public void updateQuantity() {
+		totalQuantity = 0;
+		for(ProductBean temp : myCart) {
+			totalQuantity += temp.getOrderQuantity();
+		}
+	}
+
 	public void removeProduct(int index) {
 		myCart.remove(index);
+		updateQuantity();
 	}
 	
 	public String listCartTable() {
@@ -69,6 +84,6 @@ public class ShoppingCartBean implements Serializable{
 	public void updateCart(int index, int orderQuantity) {
 		
 		myCart.get(index).setOrderQuantity(orderQuantity);
-		
+		updateQuantity();
 	}
 }

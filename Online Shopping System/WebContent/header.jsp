@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="com.demo.model.ShoppingCartBean" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,7 +26,16 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="index.jsp">Home</a></li>
-      <li><a href="displayCart.jsp">Cart</a></li>
+      <li><a href="displayCart.jsp">My Cart
+      <% 
+      	if(session.getAttribute("myCart") != null){
+      		ShoppingCartBean myCart = (ShoppingCartBean)session.getAttribute("myCart");
+      		if(myCart.getTotalQuantity() != 0)
+      			out.print("("+ myCart.getTotalQuantity() +")");
+      	}
+      
+      %>
+      </a></li>
       <%
       	if(login){
       		out.println("<li><a href=\"wishList.jsp\">Wish List</a></li>" +

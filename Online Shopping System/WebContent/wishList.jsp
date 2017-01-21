@@ -27,13 +27,14 @@
 			<%
 			
 				out.println(myList.listTable());
-				if(myList.getMyList().size() == 0){
-					out.print("<h3>There is no item in your wish list...</h3>");
-				}
-			
+				
 			%>
 	</table>
-		
+		<%
+		if(myList.getMyList().size() == 0){
+					out.print("<h3>There is no item in your wish list...</h3>");
+				}
+		%>
 		
 	<input type="button" class = "btn btn-info" value="Continue Shopping" onclick="location.href='index.jsp'">
 	<input type="button" class = "btn btn-primary" value="Checkout" onclick="location.href='checkout.jsp'">
