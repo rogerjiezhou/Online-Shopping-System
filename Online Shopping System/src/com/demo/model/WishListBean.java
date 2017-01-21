@@ -39,8 +39,8 @@ public class WishListBean implements Serializable{
 			table += "<tr><td>" + myList.get(i).getProductName() + "</td>" +
 					 "<td>" + myList.get(i).getProductPrice() + "</td>" +
 					 "<td style=\"text-align:center\">" +			
-					 "<input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'removeToCart.jsp?productID=" + myList.get(i).getProductID() +  
-					 "&index=" + i + "\'\" value=\"Remove to Cart\">" +
+					 "<input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'moveToCart.jsp?productID=" + myList.get(i).getProductID() +  
+					 "&index=" + i + "\'\" value=\"Move to Cart\">" +
 					 "<td style=\"text-align:center\">" +			
 					 "<input type=\"button\" class = \"btn btn-danger\" onclick=\"location.href=\'removeFromList.jsp?productID=" + myList.get(i).getProductID() +  
 					 "&index=" + i + "\'\" value=\"Remove from Wish List\">" +

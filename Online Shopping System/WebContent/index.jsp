@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
 
 <title>Online Shopping System</title>
 </head>
@@ -32,6 +33,7 @@
 				username = (String)session.getAttribute("username");
 		}
 		
+		int quantity = 0;
 		
 	%>
 	<jsp:include page="header.jsp" />
@@ -40,7 +42,7 @@
 	</br>
 	<div id="productList">
 		<table id="productTable" class="table table-bordered table-striped">
-			<tr><th>Product</th><th>Price</th><th style="width:15%"></th><th style="width:15%"></th></tr>
+			<tr><th>Product</th><th>Price</th><th style="width:8%">Quantity</th><th style="width:15%"></th><th style="width:15%"></th></tr>
 		<jsp:useBean id="obj" class="com.demo.dao.ProductDAO" />
 		<%
 			out.print(obj.listProduct());

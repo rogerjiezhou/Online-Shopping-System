@@ -28,7 +28,7 @@
 		
 		myCart.addProduct(product);
 		
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("displayCart.jsp");
 	%>
 
 

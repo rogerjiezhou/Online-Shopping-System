@@ -19,7 +19,7 @@ public class ShoppingCartBean implements Serializable{
 	public void addProduct(ProductBean product) {
 		int index = contains(product);
 		if(index != -1){
-			product.setOrderQuantity(product.getOrderQuantity() + 1);
+			product.setOrderQuantity(product.getOrderQuantity() + myCart.get(index).getOrderQuantity());
 			myCart.set(index, product);
 		}else
 			myCart.add(product);
@@ -38,8 +38,8 @@ public class ShoppingCartBean implements Serializable{
 			table += "<tr><td>" + myCart.get(i).getProductName() + "</td>" +
 					 "<td>" + myCart.get(i).getProductPrice() + "</td>" +
 					 "<td>" + myCart.get(i).getOrderQuantity() + "</td>" +
-					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'removeToList.jsp?id=" + i + "\'\"" +
-					 " value=\"Remove to Wish List\"></td>" +
+					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'moveToList.jsp?id=" + i + "\'\"" +
+					 " value=\"Move to Wish List\"></td>" +
 					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-danger\" onclick=\"location.href=\'removeFromCart.jsp?id=" + i + "\'\"" +
 					 " value=\"Remove from Cart\"></tr>";
 		}
