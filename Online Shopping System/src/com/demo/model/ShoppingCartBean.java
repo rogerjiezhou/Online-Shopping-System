@@ -40,7 +40,9 @@ public class ShoppingCartBean implements Serializable{
 					 "<td style=\"text-align:center\">" + "<input type=\"number\" value=\"" + myCart.get(i).getOrderQuantity() + "\" style=\"width:45px\" min=\"1\">" + 
 					 "<input type=\"button\" class = \"btn btn-primary btn-xs\" value=\"Update\" style=\"margin-left:10px\">" +
 					 "</td>" +
-					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'moveToList.jsp?id=" + i + "\'\"" +
+					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'moveToList.jsp?productID=" + myCart.get(i).getProductID()  
+						+ "&productName=" + myCart.get(i).getProductName() + "&productPrice="+ myCart.get(i).getProductPrice() +
+						"&index=" + i + "\'\"" +
 					 " value=\"Move to Wish List\"></td>" +
 					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-danger\" onclick=\"location.href=\'removeFromCart.jsp?id=" + i + "\'\"" +
 					 " value=\"Remove from Cart\"></tr>";
