@@ -35,9 +35,11 @@ public class ShoppingCartBean implements Serializable{
 		
 		for(int i = 0 ; i < myCart.size() ; i++) {
 			
-			table += "<tr><td>" + myCart.get(i).getProductName() + "</td>" +
+			table += "<tr id=\"" + i + "\"><td>" + myCart.get(i).getProductName() + "</td>" +
 					 "<td>" + myCart.get(i).getProductPrice() + "</td>" +
-					 "<td>" + myCart.get(i).getOrderQuantity() + "</td>" +
+					 "<td style=\"text-align:center\">" + "<input type=\"number\" value=\"" + myCart.get(i).getOrderQuantity() + "\" style=\"width:45px\" min=\"1\">" + 
+					 "<input type=\"button\" class = \"btn btn-primary btn-xs\" value=\"Update\" style=\"margin-left:10px\">" +
+					 "</td>" +
 					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-default\" onclick=\"location.href=\'moveToList.jsp?id=" + i + "\'\"" +
 					 " value=\"Move to Wish List\"></td>" +
 					 "<td style=\"text-align:center\"><input type=\"button\" class = \"btn btn-danger\" onclick=\"location.href=\'removeFromCart.jsp?id=" + i + "\'\"" +
@@ -60,5 +62,11 @@ public class ShoppingCartBean implements Serializable{
 		}
 		
 		return index;
+	}
+	
+	public void updateCart(int index, int orderQuantity) {
+		
+		myCart.get(index).setOrderQuantity(orderQuantity);
+		
 	}
 }

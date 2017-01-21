@@ -14,3 +14,14 @@ $(document).on('click', 'input[value="Add to Cart"]', function() {
 	
 });
 
+$(document).on('click', 'input[value="Update"]', function() {
+
+	var index = $(this).parent().parent().attr("id");
+	var quantity = $(this).prev().val();
+	
+	var jspPage = 'updateCart.jsp?index=' + index + '&orderQuantity=' + quantity;
+	
+	window.location.href = jspPage;
+	
+});
+
