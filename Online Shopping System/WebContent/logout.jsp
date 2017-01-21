@@ -9,10 +9,13 @@
 <body>
 <%
 	session.setAttribute("login", false);
-	session.setAttribute("username", null);
-	session.setAttribute("email", null);
+	session.removeAttribute("username");
+	session.removeAttribute("email");
+	session.removeAttribute("myCart");
+	session.removeAttribute("myList");
 	response.sendRedirect("index.jsp");
 %>
+
 
 
 
