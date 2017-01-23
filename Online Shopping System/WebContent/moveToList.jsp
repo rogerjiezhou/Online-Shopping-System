@@ -22,13 +22,17 @@
 	
 	myCart.removeProduct(index);
 	
-	if(!myList.contains(product)){
-		wishListDAO.insertWishList(product, (String)session.getAttribute("email"));
-		myList.addProduct(product);
+	if((Boolean)session.getAttribute("login")){	
+		if(!myList.contains(product)){
+			myList.addProduct(product);
+			wishListDAO.insertWishList(product, (String)session.getAttribute("email"));				
+		}
+		response.sendRedirect("displayCart.jsp");
+	}else {
+		session.setAttribute("tempListItem", product);
+		response.sendRedirect("login.jsp");
 	}
 	
-	response.sendRedirect("displayCart.jsp");
-
 %>
 
 </body>

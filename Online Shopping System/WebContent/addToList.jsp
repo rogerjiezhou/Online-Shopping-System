@@ -28,6 +28,7 @@
 			}
 			response.sendRedirect("wishList.jsp");
 		}else{
+			session.setAttribute("tempListItem", product);
 			response.sendRedirect("login.jsp");
 		}
 	%>

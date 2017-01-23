@@ -25,7 +25,10 @@
 		session.setAttribute("username", username);
 		session.setAttribute("email", customer.getEmail());
 		session.setAttribute("login",true);
-		response.sendRedirect("index.jsp");	
+		if(session.getAttribute("tempListItem") != null){
+			response.sendRedirect("wishList.jsp");	
+		}else
+			response.sendRedirect("index.jsp");	
 	}
 		
 %>
