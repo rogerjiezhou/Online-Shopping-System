@@ -23,9 +23,10 @@
 	<%
 		if((Boolean)session.getAttribute("login")){	
 			if(!myList.contains(product)){
+				myList.addProduct(product);
 				wishListDAO.insertWishList(product, (String)session.getAttribute("email"));				
 			}
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("wishList.jsp");
 		}else{
 			response.sendRedirect("login.jsp");
 		}
